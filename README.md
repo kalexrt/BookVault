@@ -64,11 +64,8 @@ We welcome contributions to improve BookVault. Please follow these steps to cont
 3. Make your changes.
 4. Submit a pull request with a detailed description of your changes.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
-For any questions or suggestions, please contact [Kalash S.](mailto:kalash@example.com).
+For any questions or suggestions, please contact [Kalash Shrestha](mailto:kalashestha@gmail.com).
 
