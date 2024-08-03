@@ -1,0 +1,40 @@
+services:
+  backend:
+    container_name: bookvault-backend
+    env_file: ./BackEnd/.env
+    build:
+      context: ./BackEnd
+    ports:
+      - "${PORT}:${PORT}"
+    restart: always
+    depends_on:
+      - postgres
+
+  frontend:
+    container_name: bookvault-frontend
+    env_file: ./FrontEnd/.env
+    # environment:
+    #   - VITE_API_PORT=${VITE_API_PORT}
+    build:
+      context: ./FrontEnd
+    ports:
+      - "5173:5173"
+    restart: always
+    depends_on:
+      - backend
+
+  postgres:
+    container_name: bookvault-postgres
+    image: postgres:16.3-alpine3.20
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+    volumes:
+      - postgresql_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: always
+
+volumes:
+  postgresql_data:
