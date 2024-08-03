@@ -6,8 +6,10 @@ BookVault is a full-stack library management system with separate frontend and b
 ## Setup Instructions
 
 ### Prerequisites
-- Docker
-- Docker Compose
+- Docker (optional)
+- Docker Compose (optional)
+- Node.js
+- PostgreSQL
 
 ### Environment Setup
 
@@ -44,6 +46,43 @@ BookVault is a full-stack library management system with separate frontend and b
      npm run migrate
      npm run seed:run
      ```
+### Non-Docker Setup
+
+1. **Clone the Repository:**
+   
+     ```sh
+      git clone <repository-url>
+     ```
+
+2. **Install Dependencies:**
+   - Navigate to the frontend and backend directories and run npm install:
+
+     
+       ```sh
+      cd frontend
+      npm install
+      cd ../backend
+      npm install
+      ```
+
+3. **Ensure PostgreSQL is Running and env files are setup:**
+   - Make sure you have PostgreSQL up and running, and that your .env files are correctly configured with your database credentials.
+
+4. **Run the Backend:**
+   - From the backend directory, start the backend server:
+
+     
+       ```sh
+      npm start
+      ```
+
+5. **Run the Frontend:**
+   - From the frontend directory, start the frontend development server:
+
+     
+       ```sh
+      npm run dev
+      ```
 
 ### Accessing the Application
 
